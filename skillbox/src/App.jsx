@@ -5,6 +5,13 @@ import Login from "./auth/Login"
 import AutoScrollCards from "./cards/AutoScrollCards"
 import Registration from "./auth/Registration"
 import Events from "./user/Events"
+import AdminLayout from "./Admin/AdminLayout"
+import Category from "./Admin/Category"
+import AddCategory from "./Admin/AddCategory"
+import AddEvent from "./Admin/AddEvent"
+
+
+
 
 
 function App() {
@@ -17,7 +24,13 @@ function App() {
            <Route path="/login" element={<Login></Login>}/>
            <Route path="/register" element={<Registration/>} />
            <Route path="/event" element={<Events/>}/>
+           
         </Route>
+         <Route path="/admin" element={<AdminLayout/>}>
+          <Route path="/admin/category" element={<Category/>}/>
+          <Route path="/admin/category/create" element={<AddCategory/>}/>
+           <Route path="/admin/event/create" element={<AddEvent/>}/>
+          </Route>
       </Routes>
     </>
   )
